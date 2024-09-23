@@ -51,6 +51,7 @@
 
 `
 # Include a video of the result of the code at speed 0 or Fast. Be sure to make it available for me to see.
-![image](https://github.com/user-attachments/assets/a5b71df8-59c1-4264-821a-7306b9c038b6)
+https://github.com/user-attachments/assets/04a4517c-76da-4d0a-ba1b-98da3192c1da
+
 
 ## For Regrades use the Feedback and @baeztheprog on your commit messages.
