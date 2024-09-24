@@ -1,51 +1,46 @@
-import turtle as trtl  
+import turtle as trtl
 
-# created a list to store turtle shapes and colors
-my_turtles = []
+class AviTurtle:
+    def __init__(self, shape, color, startx, starty, direction, length):
+        self.turtle = trtl.Turtle(shape=shape)
+        self.turtle.penup()
+        self.turtle.goto(startx, starty)
+        self.turtle.pendown()
+        self.turtle.color(color)
+        self.turtle.pensize(2)
+        self.turtle.setheading(direction)
+        self.turtle.forward(length)
 
-# created a list of turtle shapes to use
-turtle_shapes = [
-    "arrow", "turtle", "circle", "square", "triangle", "classic",
-    "arrow", "turtle", "circle", "square", "triangle", "classic"
-]
+    def get_position(self):
+        return self.turtle.xcor(), self.turtle.ycor()
 
-# created a list of colors for the turtles
-turtle_colors = [
-    "red", "blue", "green", "orange", "purple", "gold",
-    "black", "magenta", "yellow", "lime", "pink", "brown"
-]
+class TurtleAvi:
+    def __init__(self, shapes, colors, initial_length, length_increment):
+        self.turtles = []
+        self.shapes = shapes
+        self.colors = colors
+        self.initial_length = initial_length
+        self.length_increment = length_increment
+        self.current_direction = 0
+        self.startx = 0
+        self.starty = 0
+        self.create_turtles()
 
-# where the position for the turtles starts
-startx = 0
-starty = 0
+    def create_turtles(self):
+        for shape in self.shapes:
+            color = self.colors.pop(0)
+            turtle = AviTurtle(shape, color, self.startx, self.starty, self.current_direction, self.initial_length)
+            self.turtles.append(turtle)
+            self.startx, self.starty = turtle.get_position()
+            self.current_direction += 40
+            self.initial_length += self.length_increment
 
-# set the variables to control direction and length of movement
-current_direction = 0
-initial_length = 20  # the starting length for the first turtle
-length_increment = 5  # how big the increment is for each turtle's length
+turtle_shapes = ["arrow", "triangle", "square", "circle", "turtle", "arrow"]
+turtle_colors = ["red", "blue", "green", "orange", "purple", "gold", 
+                 "red", "blue", "green", "orange", "purple", "gold"]
 
-# created a loop to be able to loop through each shape in the turtle_shapes list
-for s in turtle_shapes:
-    t = trtl.Turtle(shape=s)  
-    t.penup()  # lifting the pen to move without drawing
-    t.goto(startx, starty)  
-    t.pendown()  
-    
-    color = turtle_colors.pop(0)  # being able to get the next color and remove it from the list
-    t.color(color)  
-    t.pensize(2) 
-    
-    t.setheading(current_direction)  
-    t.forward(initial_length) 
-    
-    # set the starting coordinates for the next turtle
-    startx = t.xcor()
-    starty = t.ycor()
-
-    current_direction += 30  
-    initial_length += length_increment  
-
-    my_turtles.append(t) 
+turtle_draw = TurtleAvi(turtle_shapes, turtle_colors, initial_length=45, length_increment=0)
 
 wn = trtl.Screen()
-wn.mainloop()  
+wn.mainloop()
+
