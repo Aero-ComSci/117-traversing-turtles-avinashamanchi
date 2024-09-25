@@ -7,7 +7,7 @@ class TurtleShape:
         # lifts the pen to not draw while moving to the initial position
         self.turtle.penup()
         self.turtle.color(color)
-        self.turtle.pencolor("black")
+
 
     # moves the turtle to a start position and draws a line at a specific angle and length
     def move_and_draw(self, startx, starty, startDir, forwardLength):
