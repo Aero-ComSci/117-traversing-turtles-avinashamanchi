@@ -45,12 +45,17 @@
 
 ## Questions about the Activity as you work. 
 ```
-
+- how does using classes affect the code?
+- in a real world scenario would coding the code without classes or functions be slower and less efficent or faster and more efficent?
 ```
 #### Description Of The App according to User Story
-
-`
+```
+- This app can be used for entertaimment because of the ability for it to draw shapes and print any type of images with color. This app can target younger kids because
+of the easy ability to draw and print easy to see shapes. 
+```
 # Include a video of the result of the code at speed 0 or Fast. Be sure to make it available for me to see.
+https://github.com/user-attachments/assets/1ef614b3-dfa5-4751-bd9a-7f1b06891b7f
+
 
 
 ## For Regrades use the Feedback and @baeztheprog on your commit messages.
